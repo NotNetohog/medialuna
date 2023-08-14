@@ -9,7 +9,12 @@
 	import '../app.css'
 	import PageTransition from './transition.svelte'
 
+	import { dev } from '$app/environment'
+	import { inject } from '@vercel/analytics'
+
 	export let data
+
+	inject({ mode: dev ? 'development' : 'production' })
 </script>
 
 <div class="layout">
